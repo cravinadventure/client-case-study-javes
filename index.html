@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: JAVES · Cravin' Adventure Studios</title>
+<style>
+  :root{--electric:#6C5CE7;--violet:#4A3BAD;--charcoal:#12121f;--ink:#0b0b14;--paper:#f4f3fb;--muted:#9a98b5;--line:rgba(108,92,231,.22);--good:#39d98a}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  .accent{color:var(--electric)}
+
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:rgba(11,11,20,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{font-weight:800;letter-spacing:1.6px;font-size:13px;text-transform:uppercase}
+  nav .brand span{color:var(--electric)}
+  nav .tag{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+
+  .hero{text-align:center;padding:88px 0 44px;background:radial-gradient(900px 440px at 50% -10%, rgba(108,92,231,.30), transparent 70%),linear-gradient(180deg,#15152a 0%,var(--ink) 100%)}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--electric);margin-bottom:20px}
+  .hero h1{font-size:clamp(32px,5.5vw,56px);line-height:1.06;font-weight:800;letter-spacing:-1px;max-width:720px;margin:0 auto}
+  .hero .sub{max-width:540px;margin:20px auto 0;color:var(--muted);font-size:clamp(16px,2.2vw,19px)}
+  .hero .oneline{margin:30px auto 0;font-size:14px;color:var(--paper);font-weight:600;letter-spacing:.3px}
+  .hero .oneline b{color:var(--electric)}
+
+  section{padding:56px 0;border-top:1px solid rgba(108,92,231,.08)}
+  .shead{text-align:center;max-width:600px;margin:0 auto 38px}
+  .shead .k{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--electric);margin-bottom:12px}
+  .shead h2{font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.4px;line-height:1.12}
+  .shead p{margin-top:14px;color:var(--muted);font-size:16px}
+
+  .client{display:flex;align-items:center;justify-content:center;gap:26px;text-align:left}
+  .client .ph{width:124px;height:124px;border-radius:50%;background-size:cover;background-position:50% 30%;border:1px solid var(--line);flex-shrink:0}
+  .client b{display:block;font-size:24px}
+  .client .h{font-size:15px;color:var(--electric);margin-top:2px}
+  .client .d{font-size:16.5px;color:#cdccdf;max-width:440px;margin-top:9px;line-height:1.55}
+
+  /* chronological timeline */
+  .flow{max-width:640px;margin:0 auto;display:flex;flex-direction:column}
+  .frow{display:flex;gap:20px}
+  .frail{display:flex;flex-direction:column;align-items:center;width:38px;flex:0 0 38px}
+  .fdot{width:38px;height:38px;border-radius:50%;background:var(--charcoal);border:2px solid var(--electric);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--electric);flex:0 0 38px}
+  .fline{flex:1;width:2px;background:linear-gradient(var(--electric),rgba(108,92,231,.18))}
+  .fbox{flex:1;padding-bottom:30px}
+  .fbox h4{font-size:18px;font-weight:700;margin-bottom:6px}
+  .fbox p{font-size:14.5px;color:#cdccdf;line-height:1.6}
+  .frow:last-child .fline{display:none}
+  .frow:last-child .fbox{padding-bottom:0}
+
+  /* delivered list */
+  .dlist{max-width:560px;margin:0 auto;list-style:none}
+  .dlist li{display:flex;gap:14px;align-items:flex-start;padding:16px 4px;border-bottom:1px solid var(--line)}
+  .dlist li:last-child{border-bottom:0}
+  .dlist svg{width:22px;height:22px;flex:none;stroke:var(--good);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:1px;filter:drop-shadow(0 0 5px rgba(57,217,138,.4))}
+  .dlist .t{font-size:15.5px;color:var(--paper);font-weight:600}
+  .dlist .s{font-size:14px;color:var(--muted);display:block;margin-top:2px}
+
+  /* numbers */
+  .bars{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+  .bar .lab{font-size:14px;color:#cdccdf;margin-bottom:7px;display:flex;justify-content:space-between;align-items:baseline}
+  .bar .lab b{font-size:19px;font-weight:800;color:var(--paper)}
+  .bar .track{height:13px;border-radius:8px;background:rgba(108,92,231,.12);overflow:hidden}
+  .bar .fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--violet),var(--electric))}
+
+  .close{max-width:560px;margin:0 auto;list-style:none}
+  .close li{display:flex;gap:13px;align-items:flex-start;padding:13px 4px;font-size:15px;color:#cdccdf;line-height:1.55}
+  .close b{color:var(--paper);font-weight:700}
+  .close svg{width:20px;height:20px;flex:none;stroke:var(--electric);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+
+  footer{padding:52px 0 70px;text-align:center;border-top:1px solid var(--line);color:var(--muted)}
+  footer .brand{font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--paper);font-size:14px}
+  footer a{color:var(--electric);text-decoration:none}
+
+  @media(max-width:480px){.client{flex-direction:column;text-align:center} .client .d{text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">CRAVIN' <span>ADVENTURE</span> STUDIOS</div>
+  <div class="tag">Client Story</div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Client Story · JAVES</div>
+    <h1>One DJ set, turned into weeks of content.</h1>
+    <p class="sub">JAVES filmed a single rooftop set. We handed back a full pack of short videos, ready to post.</p>
+    <div class="oneline">One night filmed &nbsp;&rarr;&nbsp; <b>12 finished videos</b> &nbsp;&rarr;&nbsp; delivered in days</div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="client">
+      <div class="ph" style="background-image:url('assets/javes_profile_hat_headphones_lake.jpg')"></div>
+      <div>
+        <b>JAVES</b>
+        <div class="h">@officialjaves</div>
+        <div class="d">A DJ and the founder of the event HGGH. She played a rooftop set over the Boston skyline and wanted videos from the night to share online.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">How It Went</div>
+      <h2>Start to finish, step by step.</h2>
+      <p>From her first message to the final videos. Done by hand, just done fast.</p>
+    </div>
+    <div class="flow">
+      <div class="frow"><div class="frail"><div class="fdot">1</div><div class="fline"></div></div><div class="fbox"><h4>She reached out</h4><p>JAVES had just played a rooftop set and wanted videos from the night to post. We got on a quick call to hear exactly what she was going for.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">2</div><div class="fline"></div></div><div class="fbox"><h4>She sent her songs and the trends she liked</h4><p>She came with three video styles in mind, all based on trends going around that she sent over as examples for us to take inspiration from: a short "aura" clip, a longer one cut in time to a song, and a countdown. She picked the songs herself and sent those too.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">3</div><div class="fline"></div></div><div class="fbox"><h4>We went through all the footage</h4><p>Her own clips plus videos her friends filmed on their phones. We watched everything and pulled the best moments into clean, organized clips, each one labeled so it is easy to find later.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">4</div><div class="fline"></div></div><div class="fbox"><h4>We cut the videos to the music</h4><p>Our team edited each short video by hand so the cuts land right on the beat of her songs. Nothing generic, every cut is a choice. We just move fast.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">5</div><div class="fline"></div></div><div class="fbox"><h4>We added her look and her words</h4><p>Her own color style on every clip, plus on-screen text we built from the trends she sent as inspiration: the "aura" look, and a countdown that ticks down on screen.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">6</div><div class="fline"></div></div><div class="fbox"><h4>We made longer versions too</h4><p>Full-length cuts with no text on them, so she could add her own captions if she ever wanted to.</p></div></div>
+      <div class="frow"><div class="frail"><div class="fdot">7</div><div class="fline"></div></div><div class="fbox"><h4>We delivered, days early</h4><p>A full pack of finished videos, ready to post, handed over in a single shared folder days after the event.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">What She Got Back</div>
+      <h2>Twelve videos, ready to post.</h2>
+    </div>
+    <ul class="dlist">
+      <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><span class="t">7 short videos with her text on screen</span><span class="s">Finished and ready to post as is.</span></div></li>
+      <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><span class="t">5 longer videos with no text</span><span class="s">So she can add her own captions whenever she likes.</span></div></li>
+      <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><span class="t">All the editable project files</span><span class="s">So anything can be changed or re-cut down the road.</span></div></li>
+      <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><span class="t">A one-page file guide (PDF)</span><span class="s">A simple PDF that lists every video and explains how the files are named, so she always knows exactly what each one is.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">The Scale of It</div>
+      <h2>We build more than we hand over, on purpose.</h2>
+      <p>That way only the strongest, fully finished videos make it to her. Here is how it narrowed down.</p>
+    </div>
+    <div class="bars">
+      <div class="bar"><div class="lab"><span>Best moments pulled from the night</span><b>26</b></div><div class="track"><div class="fill" style="width:65%"></div></div></div>
+      <div class="bar"><div class="lab"><span>Rough video options we built to pick from</span><b>40</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+      <div class="bar"><div class="lab"><span>Best ones we finished and delivered</span><b>12</b></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+    </div>
+    <p style="text-align:center;max-width:520px;margin:26px auto 0;font-size:14px;color:var(--muted)">In plain terms: we made 40 options so we could keep only the 12 best, then polished those until they were ready to post.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">How We Work</div>
+      <h2>Careful with her work. Quick with ours.</h2>
+    </div>
+    <ul class="close">
+      <li><svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5"/></svg><span><b>Constant status updates.</b> Like a field report to the commander, she always knows the project's health, where we are, and what is coming next. No chasing us for an update.</span></li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span><b>Non-destructive.</b> We only ever edit copies, so her original videos are never changed or lost.</span></li>
+      <li><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span><b>Organized and labeled.</b> Every clip is named by what it shows, so anything can be found in seconds.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 10 15 10"/></svg><span><b>Version controlled.</b> Every change is saved as its own version, like a full save history, so we can roll back to any point and nothing is ever lost.</span></li>
+      <li><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span><b>Beat-matched.</b> Every cut lands right on the beat of the music.</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="brand">CRAVIN' ADVENTURE STUDIOS</div>
+  <p style="margin-top:10px;font-size:14px">Custom visuals, reels, and live projection for artists and events.</p>
+  <p style="margin-top:8px;font-size:13px"><a href="https://cravinadventure.github.io/boutique-audio-visual-adventures/">See our boutique audio-visual work &rarr;</a></p>
+</footer>
+
+</body>
+</html>
