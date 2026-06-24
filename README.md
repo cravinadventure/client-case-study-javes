@@ -2,7 +2,7 @@
 
 A single-page case study showing how Cravin' Adventure Studios turned one rooftop DJ set into a full pack of post-ready videos for JAVES (@officialjaves).
 
-**Live:** https://cravinadventure.github.io/javes-case-study/
+**Live:** https://cravinadventure.github.io/client-case-study-javes/
 
 Self-contained static page: `index.html` (inline CSS + inline SVG icons and graphs) plus one image in `assets/`. No build step, no dependencies.
 

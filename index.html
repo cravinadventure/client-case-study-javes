@@ -24,6 +24,11 @@
   .hero .sub{max-width:540px;margin:20px auto 0;color:var(--muted);font-size:clamp(16px,2.2vw,19px)}
   .hero .oneline{margin:30px auto 0;font-size:14px;color:var(--paper);font-weight:600;letter-spacing:.3px}
   .hero .oneline b{color:var(--electric)}
+  .dates{display:flex;flex-wrap:wrap;justify-content:center;max-width:580px;margin:30px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(18,18,31,.5)}
+  .dates .dcell{flex:1 1 33%;padding:15px 12px;text-align:center;border-right:1px solid var(--line)}
+  .dates .dcell:last-child{border-right:0}
+  .dates .dl2{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--electric);margin-bottom:6px}
+  .dates .dv{font-size:15px;font-weight:700;color:var(--paper)}
 
   section{padding:56px 0;border-top:1px solid rgba(108,92,231,.08)}
   .shead{text-align:center;max-width:600px;margin:0 auto 38px}
@@ -82,7 +87,7 @@
   footer .brand{font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--paper);font-size:14px}
   footer a{color:var(--electric);text-decoration:none}
 
-  @media(max-width:480px){.client{flex-direction:column;text-align:center} .client .d{text-align:center}}
+  @media(max-width:480px){.client{flex-direction:column;text-align:center} .client .d{text-align:center} .dates .dcell{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--line)} .dates .dcell:last-child{border-bottom:0}}
 </style>
 </head>
 <body>
@@ -98,6 +103,11 @@
     <h1>One DJ set, turned into weeks of content.</h1>
     <p class="sub">We started with the clips of JAVES from one rooftop set, and handed back a full pack of short videos, ready to post.</p>
     <div class="oneline">One night filmed &nbsp;&rarr;&nbsp; <b>12 finished videos</b> &nbsp;&rarr;&nbsp; delivered in days</div>
+    <div class="dates">
+      <div class="dcell"><div class="dl2">The event</div><div class="dv">June 13, 2026</div></div>
+      <div class="dcell"><div class="dl2">JAVES reached out</div><div class="dv">June 15, 2026</div></div>
+      <div class="dcell"><div class="dl2">Delivered</div><div class="dv">June 17, 2026</div></div>
+    </div>
     <button id="detailToggle" class="toggle" type="button" aria-pressed="false"><span class="tdot"></span>Turn on full description mode</button>
   </div>
 </header>
