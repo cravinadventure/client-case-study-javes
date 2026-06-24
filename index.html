@@ -29,6 +29,15 @@
   .dates .dcell:last-child{border-right:0}
   .dates .dl2{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--electric);margin-bottom:6px}
   .dates .dv{font-size:15px;font-weight:700;color:var(--paper)}
+  .client a.h{text-decoration:none}
+  .proof{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;max-width:660px;margin:0 auto}
+  .pcard{flex:1 1 280px;display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--charcoal);text-decoration:none;color:inherit;transition:border-color .2s,background .2s}
+  .pcard:hover{border-color:var(--electric);background:rgba(108,92,231,.1)}
+  .pcard .pic{width:46px;height:46px;border-radius:50%;flex:none;background-size:cover;background-position:50% 30%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+  .pcard .pic svg{width:22px;height:22px;stroke:var(--electric);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .pcard .ptxt b{display:block;font-size:15px;color:var(--paper)}
+  .pcard .ptxt span{font-size:12.5px;color:var(--muted)}
+  .pcard .pgo{margin-left:auto;color:var(--electric);font-size:18px;font-weight:700}
 
   section{padding:56px 0;border-top:1px solid rgba(108,92,231,.08)}
   .shead{text-align:center;max-width:600px;margin:0 auto 38px}
@@ -120,9 +129,31 @@
       <div class="ph" style="background-image:url('assets/javes_profile_hat_headphones_lake.jpg')"></div>
       <div>
         <b>JAVES</b>
-        <div class="h">@officialjaves</div>
+        <a class="h" href="https://www.instagram.com/officialjaves/" target="_blank" rel="noopener">@officialjaves</a>
         <div class="d">A DJ and the founder of the event HGGH. JAVES played a rooftop set over the Boston skyline and wanted videos from the night to share online.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">The Receipts</div>
+      <h2>Real client. Real event.</h2>
+      <p>Not a mockup. See for yourself.</p>
+    </div>
+    <div class="proof">
+      <a class="pcard" href="https://www.instagram.com/officialjaves/" target="_blank" rel="noopener">
+        <div class="pic" style="background-image:url('assets/javes_profile_hat_headphones_lake.jpg')"></div>
+        <div class="ptxt"><b>JAVES</b><span>@officialjaves on Instagram</span></div>
+        <div class="pgo">&rarr;</div>
+      </a>
+      <a class="pcard" href="https://www.instagram.com/sunsetsviewboston/" target="_blank" rel="noopener">
+        <div class="pic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M10 9h4M10 13h4M10 17h4"/></svg></div>
+        <div class="ptxt"><b>Sun Sets at View Boston</b><span>Rooftop series atop the Prudential</span></div>
+        <div class="pgo">&rarr;</div>
+      </a>
     </div>
   </div>
 </section>
