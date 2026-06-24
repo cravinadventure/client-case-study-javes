@@ -13,10 +13,10 @@
   a{color:inherit}
   .accent{color:var(--electric)}
 
-  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:rgba(11,11,20,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 28px;background:rgba(11,11,20,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   nav .brand{font-weight:800;letter-spacing:1.6px;font-size:13px;text-transform:uppercase}
   nav .brand span{color:var(--electric)}
-  nav .tag{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  nav .tag{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);text-align:right}
 
   .hero{text-align:center;padding:88px 0 44px;background:radial-gradient(900px 440px at 50% -10%, rgba(108,92,231,.30), transparent 70%),linear-gradient(180deg,#15152a 0%,var(--ink) 100%)}
   .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--electric);margin-bottom:20px}
@@ -102,13 +102,14 @@
 <body>
 
 <nav>
+  <div></div>
   <div class="brand">CRAVIN' <span>ADVENTURE</span> STUDIOS</div>
-  <div class="tag">Client Story</div>
+  <div class="tag">Client Case Study</div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Client Story · JAVES</div>
+    <div class="eyebrow">Client Case Study · JAVES</div>
     <h1>One DJ set, turned into weeks of content.</h1>
     <p class="sub">We started with the clips of JAVES from one rooftop set, and handed back a full pack of short videos, ready to post.</p>
     <div class="oneline">Locked in one day &nbsp;&rarr;&nbsp; <b>12 finished videos</b> &nbsp;&rarr;&nbsp; delivered the next</div>
